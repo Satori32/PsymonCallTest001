@@ -178,22 +178,27 @@ void Eat(Psymon* P, const std::string& Text) {
 
 
 int main() {
+	/** /
 	Psymon Psy=Psymon();
 	auto R = Psy.Connect("Hello. I try go to School. Are you Allow?");
 	auto S = Psy.Number();
+	/**/
+	std::shared_ptr<Psymon> Psy = std::make_shared<Psymon>();
+	auto R = Psy->Connect("Hello. I try go to School. Are you Allow?");
+	auto S = Psy->Number();
 	if (!R) {
 		PsymonCall::Send(S,"I leave.");
 		std::cout << "Miss Connect!" << std::endl;
 	}
 
-	WakeUp(&Psy, "おはようございます！");
-	Eat(&Psy, "いただきます！！");
+	WakeUp(Psy.get(), "おはようございます！");
+	Eat(Psy.get(), "いただきます！！");
 
 	/////////////////////////////////////
 
 	PsymonCall::Send(PsymonCall::Seed(), "Auther is over the writing. over.");
 	std::cout << "うわー、世界は広いなー。" << std::endl;
-	Psy.Conjection();
+	Psy->Conjection();
 
 	/////////////////////////////////////
 
