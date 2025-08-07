@@ -196,7 +196,7 @@ int main() {
 
 	/////////////////////////////////////
 
-	PsymonCall::Send(PsymonCall::Seed(), "Auther is over the writing. over.");
+	PsymonCall::Send(PsymonCall::Seed(), "Auther is over the writing. over.");//I get very confution at heavy time. i forget class construction and par.
 	std::cout << "‚¤‚í[A¢ŠE‚ÍL‚¢‚È[B" << std::endl;
 	Psy->Conjection();
 
